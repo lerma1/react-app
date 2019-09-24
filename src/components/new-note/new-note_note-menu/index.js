@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './style.css'
 
-class NoteMenu extends Component {
+class NewNoteNoteMenu extends Component {
 
     render() {
 
@@ -15,11 +15,11 @@ class NoteMenu extends Component {
                     <img className="btn note-menu__img-button" src="icon/more.png" alt=""></img>
                     <img className="btn note-menu__img-button" src="icon/cancel.png" alt=""></img>
                     <img className="btn note-menu__img-button" src="icon/repeat.png" alt=""></img>
-                    <img className="btn note-menu__img-button float-right" src="icon/trash-can.png" alt=""></img>
+                <button className="new-note_button_close btn  btn-light float-right w-auto text-secondary note-menu__img-button float-right " ><h5>Сохранить</h5></button>
 
             </div>
         )
     }
 }
 
-export default NoteMenu
+export default NewNoteNoteMenu

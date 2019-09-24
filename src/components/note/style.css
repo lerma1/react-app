@@ -1,0 +1,9 @@
+.note-menu__hover-off,
+.note-menu__hover-on:hover{
+    display: none;
+}
+
+.note-menu__hover-on,
+.note-menu__hover-off:hover{
+    display: inline-block;
+}

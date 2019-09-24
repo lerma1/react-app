@@ -1,0 +1,9 @@
+.new-note__input{
+    border: 0px;
+    resize: none;
+    display: inline-block;
+
+}
+.new-note__input:focus{
+    outline:none;
+}
