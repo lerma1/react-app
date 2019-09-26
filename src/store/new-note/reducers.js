@@ -6,19 +6,20 @@ const defaultState = {
     text: "",
     img: null,
     color: WHITE,
-    isOpen: false,
+    isOpen: true,
 }
 
 export const newNoteReducer = (state = defaultState, action) => {
   console.log(state);
     switch (action.type) {
         case OPEN_NEW_NOTE: {
-
             return {...state, isOpen: true };
         }
         case CLOSE_NEW_NOTE: {
-
             return {...state, isOpen: false };
+        }
+        case ADD_IMAGE_IN_NEW_NOTE: {
+            return {...state, img: action.payload };
         }
         case CHANGE_COLOR_NEW_NOTE: {
             return {...state, color: action.payload };

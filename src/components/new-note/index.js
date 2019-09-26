@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
+import Popper from "popper.js";
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+
 import NewNoteNoteMenu from './new-note_note-menu/index.js';
 import './style.css'
 
@@ -27,7 +32,7 @@ class NewNote extends Component {
 
     renderNewNoteOpen = () =>{
         return (
-                <div className="new-note card-body pb-1">
+                <div className="new-note card-body ">
                     <h2>
                         <input
                             className="new-note__input w-100 text-secondary"
@@ -73,5 +78,9 @@ class NewNote extends Component {
         )
     }
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 
 export default NewNote
