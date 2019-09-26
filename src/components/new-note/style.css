@@ -2,8 +2,13 @@
     border: 0px;
     resize: none;
     display: inline-block;
+    background: none;
 
 }
 .new-note__input:focus{
     outline:none;
+}
+
+.note-menu__opticality-1:hover{
+    background: rgba(50, 50, 50, 0.1);
 }

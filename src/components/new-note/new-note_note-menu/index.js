@@ -14,13 +14,13 @@ class NewNoteNoteMenu extends Component {
             <div className="d-inline-block w-100 dropdown " >
                 <Dropdown className="d-inline-block">
                     <Dropdown.Toggle as={DropdownButton} id="dropdown-custom-components" url = "url(icon/new-color.png)"/>
-                    <Dropdown.Menu as={ColorMenu} />
+                    <Dropdown.Menu as={ColorMenu} onSetColorNewNote = {this.props.onSetColorNewNote}/>
                 </Dropdown>
                 <button className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/new-image.png)"}} data-toggle="tooltip" data-placement="top" title="Добавить картинку" />
                 <img src="icon/more.png" ></img>
                 <button className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/cancel.png)"}} data-toggle="tooltip" data-placement="top" title="Отменить" />
-                <button className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/repeat.png)"}} data-toggle="tooltip" data-placement="top" title="Повторить" />
-                <button className="btn  btn-light w-auto text-secondary  float-right btn-sm "data-toggle="tooltip" data-placement="top" title="Схоранить заметку" ><h5>Сохранить</h5></button>
+                <button className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/repeat.png)"}}  data-toggle="tooltip" data-placement="top" title="Повторить"  />
+                <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1" data-toggle="tooltip" data-placement="top" title="Схоранить заметку" ><h5>Сохранить</h5></button>
 
             </div>
         )

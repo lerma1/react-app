@@ -11,7 +11,7 @@ class ColorMenu extends Component {
 
         this.handleChange = this.handleChange.bind(this);
 
-        this.state = { value: '' };
+        this.state = { isChecked: this.props.color };
     }
 
     handleChange(e) {
@@ -26,10 +26,10 @@ class ColorMenu extends Component {
             <div style={style} className={className} aria-labelledby={labeledBy}>
             <div className="d-inline-flex  p-2 flex-row  "  >
 
-                <button className="color-menu_button " style={{"background-color": WHITE}} data-toggle="tooltip" data-placement="bottom" title="Белый"> ✔ </button>
-                <button className="color-menu_button " style={{"background-color": YELLOW}} data-toggle="tooltip" data-placement="bottom" title="Желтый"> </button>
-                <button className="color-menu_button" style={{"background-color": RED}} data-toggle="tooltip" data-placement="bottom" title="Красный"> </button>
-                <button className="color-menu_button " style={{"background-color": BLUE}} data-toggle="tooltip" data-placement="bottom" title="Синий"> </button>
+                <button className="color-menu_button " style={{"background-color": WHITE}} data-color = "WHITE" data-toggle="tooltip" data-placement="bottom" title="Белый">✔ </button>
+                <button className="color-menu_button " style={{"background-color": YELLOW}} data-color = "YELLOW" data-toggle="tooltip" data-placement="bottom" title="Желтый"> </button>
+                <button className="color-menu_button" style={{"background-color": RED}} data-color = "RED" onClick={this.props.onSetColorNewNote} data-toggle="tooltip" data-placement="bottom" title="Красный"> </button>
+                <button className="color-menu_button " style={{"background-color": BLUE}} data-color = "BLUE" data-toggle="tooltip" data-placement="bottom" title="Синий"> </button>
 
             </div>
             </div>

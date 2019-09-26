@@ -1,12 +1,13 @@
 import {ADD_IMAGE_IN_NEW_NOTE, CHANGE_COLOR_NEW_NOTE,CHANGE_TITLE_NEW_NOTE,CHANGE_TEXT_NEW_NOTE,UN_DO_NEW_NOTE,RE_DO_NEW_NOTE, OPEN_NEW_NOTE,CLOSE_NEW_NOTE } from './actions'
-import {WHITE,YELLOW,RED,BLUE} from "../../constants/colors";
+import {colors} from "../../constants/colors";
 
 const defaultState = {
     title: "",
     text: "",
     img: null,
-    color: WHITE,
+    color: colors[0].name,
     isOpen: true,
+    colors: colors,
 }
 
 export const newNoteReducer = (state = defaultState, action) => {

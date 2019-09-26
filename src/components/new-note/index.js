@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 import NewNoteNoteMenu from './new-note_note-menu/index.js';
 import './style.css'
+import {BLUE, RED} from "../../constants/colors";
 
 
 class NewNote extends Component {
@@ -15,6 +16,7 @@ class NewNote extends Component {
         this.onTitleChange = this.onTitleChange.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
         this.onClickNewNote = this.onClickNewNote.bind(this);
+        this.onSetColorNewNote = this.onSetColorNewNote.bind(this);
         console.log(props);
     }
 
@@ -30,9 +32,14 @@ class NewNote extends Component {
         event.target.closest('.new-note_button_close')? this.props.closeNewNote(): this.props.openNewNote();
     }
 
+    onSetColorNewNote(event) {
+        alert(event.target.getAttribute('data-color'))
+        this.props.setColorNewNote(RED);
+    }
+
     renderNewNoteOpen = () =>{
         return (
-                <div className="new-note card-body ">
+                <div className="new-note card-body " style={{"background-color":this.props.color}}>
                     <h2>
                         <input
                             className="new-note__input w-100 text-secondary"
@@ -53,7 +60,7 @@ class NewNote extends Component {
                         />
                     </h4>
                     <div className="m-0">
-                        <NewNoteNoteMenu/>
+                        <NewNoteNoteMenu color = {this.props.color} onSetColorNewNote = {this.onSetColorNewNote}/>
 
                     </div>
                 </div>
@@ -78,9 +85,9 @@ class NewNote extends Component {
         )
     }
 }
-
+/*
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
-
+*/
 export default NewNote
