@@ -8,13 +8,13 @@ class Article extends Component { //Класс наследует от Комп�
         this.state = { //состояния компонента
             isOpen: props.defaultOpen
         }
-        console.log(props);
+      //  console.log(props);
     }
 
 
         handleClick = () =>{
            this.setState({isOpen: !this.state.isOpen});
-           console.log('---','clicked');
+          // console.log('---','clicked');
         }
 
 
@@ -22,7 +22,7 @@ class Article extends Component { //Класс наследует от Комп�
 
     render() { //обязательный метод, который выдает внешний вид компонента
         const {article} = this.props;
-        console.log(this.props);
+      //  console.log(this.props);
         var body = this.state.isOpen&&<section className="card-text">{article.text}</section>;
         var buttonText = this.state.isOpen?'close':'open';
 

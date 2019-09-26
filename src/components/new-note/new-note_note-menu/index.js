@@ -8,13 +8,13 @@ import './style.css'
 class NewNoteNoteMenu extends Component {
 
     render() {
-
+        //console.log(this.props);
         return (
 
             <div className="d-inline-block w-100 dropdown " >
                 <Dropdown className="d-inline-block">
                     <Dropdown.Toggle as={DropdownButton} id="dropdown-custom-components" url = "url(icon/new-color.png)"/>
-                    <Dropdown.Menu as={ColorMenu} onSetColorNewNote = {this.props.onSetColorNewNote}/>
+                    <Dropdown.Menu as={ColorMenu} color = {this.props.color} colors = {this.props.colors} onSetColorNewNote = {this.props.onSetColorNewNote}/>
                 </Dropdown>
                 <button className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/new-image.png)"}} data-toggle="tooltip" data-placement="top" title="Добавить картинку" />
                 <img src="icon/more.png" ></img>

@@ -11,7 +11,7 @@ const defaultState = {
 }
 
 export const newNoteReducer = (state = defaultState, action) => {
-  console.log(state);
+    console.log("ньюнот редьюсер");console.log( state);
     switch (action.type) {
         case OPEN_NEW_NOTE: {
             return {...state, isOpen: true };

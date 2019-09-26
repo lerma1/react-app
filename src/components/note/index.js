@@ -15,7 +15,7 @@ class Note extends Component {
             isHover: false,
         }
 
-        console.log(props);
+       // console.log(props);
     }
 
     handleClick = () =>{
@@ -25,7 +25,7 @@ class Note extends Component {
 
     handleMouseenter = () =>{
        this.setState({isHover:true});
-       console.log("наведение! " +  this.state.isHover);
+       //console.log("наведение! " +  this.state.isHover);
     }
 
     render() {

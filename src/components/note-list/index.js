@@ -11,7 +11,7 @@ class NoteList extends Component {
             isOpenNewNote: false
         }
 
-        console.log(props);
+       // console.log(props);
     }
 
 

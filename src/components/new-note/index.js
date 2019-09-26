@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
-import Popper from "popper.js";
+//import $ from 'jquery';
+//import Popper from "popper.js";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 import NewNoteNoteMenu from './new-note_note-menu/index.js';
 import './style.css'
-import {BLUE, RED} from "../../constants/colors";
+import {colors} from "../../constants/colors";
+
 
 
 class NewNote extends Component {
@@ -17,7 +18,7 @@ class NewNote extends Component {
         this.onTextChange = this.onTextChange.bind(this);
         this.onClickNewNote = this.onClickNewNote.bind(this);
         this.onSetColorNewNote = this.onSetColorNewNote.bind(this);
-        console.log(props);
+        //console.log(props);
     }
 
     onTitleChange(event) {
@@ -33,13 +34,15 @@ class NewNote extends Component {
     }
 
     onSetColorNewNote(event) {
-        alert(event.target.getAttribute('data-color'))
-        this.props.setColorNewNote(RED);
+          this.props.setColorNewNote(event.target.getAttribute('data-color'));
     }
 
+
     renderNewNoteOpen = () =>{
+        console.log(this.props);
+        console.log(this.props.color);
         return (
-                <div className="new-note card-body " style={{"background-color":this.props.color}}>
+                <div className="new-note card-body " style={{"background-color": this.props.colors.find(item => item.name == this.props.color ).code}}>
                     <h2>
                         <input
                             className="new-note__input w-100 text-secondary"
@@ -60,7 +63,7 @@ class NewNote extends Component {
                         />
                     </h4>
                     <div className="m-0">
-                        <NewNoteNoteMenu color = {this.props.color} onSetColorNewNote = {this.onSetColorNewNote}/>
+                        <NewNoteNoteMenu color = {this.props.color} colors = {this.props.colors} onSetColorNewNote = {this.onSetColorNewNote}/>
 
                     </div>
                 </div>
@@ -69,7 +72,7 @@ class NewNote extends Component {
 
     renderNewNoteClose = () =>{
         return (
-                <div className="card-body">
+                <div className="card-body" >
                     <h2><input className="new-note__input w-100 text-secondary" type="text"  placeholder="Новая заметка..."></input></h2>
                 </div>
         );

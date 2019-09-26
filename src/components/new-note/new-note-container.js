@@ -10,6 +10,7 @@ import {setTitleNewNote, setTextNewNote, openNewNote, closeNewNote, setColorNewN
              text={this.props.text}
              isOpen={this.props.isOpen}
              color={this.props.color}
+             colors={this.props.colors}
              openNewNote={this.props.openNewNote}
              closeNewNote={this.props.closeNewNote}
              setTitleNewNote={this.props.setTitleNewNote}
@@ -26,6 +27,7 @@ const mapStateToProps = (state) => {
          text: state.newNote.text,
          isOpen:state.newNote.isOpen,
          color:state.newNote.color,
+         colors: state.newNote.colors,
      };
 }
 //функция, которая будет наши экшн креэйтеры передавать в пропс
