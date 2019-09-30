@@ -7,6 +7,7 @@ export const CHANGE_TITLE_NEW_NOTE="CHANGE_TITLE_NEW_NOTE";
 export const CHANGE_TEXT_NEW_NOTE="CHANGE_TEXT_NEW_NOTE";
 export const UN_DO_NEW_NOTE="UN_DO_NEW_NOTE";
 export const RE_DO_NEW_NOTE="RE_DO_NEW_NOTE";
+export const UPDATE_TEXTBUFFER_NEW_NOTE="UPDATE_TEXTBUFFER_NEW_NOTE";
 
 export const openNewNote = () => ({
     type: OPEN_NEW_NOTE,
@@ -33,22 +34,22 @@ export const setColorNewNote = (color) => ({
     payload:color,
 });
 
-export const setTitleNewNote = (title) => ({
-    type: CHANGE_TITLE_NEW_NOTE,
-    payload:title,
-});
-
-export const setTextNewNote = (text) => ({
+export const setTextNewNote = (title, text) => ({
     type: CHANGE_TEXT_NEW_NOTE,
-    payload:text
+    payload:{text: text, title: title}
 });
 
-export const unDoNewNote = ( text) => ({
+export const updateTextBuffer = (textBuffer) => ({
+    type: UPDATE_TEXTBUFFER_NEW_NOTE,
+    payload:{textBuffer: textBuffer}
+});
+
+export const unDoNewNote = ( title, text, textBuffer) => ({
     type: UN_DO_NEW_NOTE,
-    payload:text,
+    payload:{text: text, title: title, textBuffer: textBuffer}
 });
 
-export const reDoNewNote = (text) => ({
+export const reDoNewNote = (title, text, textBuffer) => ({
     type: RE_DO_NEW_NOTE,
-    payload:text,
+    payload: {text: text, title: title, textBuffer: textBuffer}
 });

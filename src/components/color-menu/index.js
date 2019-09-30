@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './style.css'
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 
 
@@ -21,9 +23,9 @@ class ColorMenu extends Component {
         const {style,className,'aria-labelledby': labeledBy} = this.props;
 
         const colorElements = this.props.colors.map((color, index) =>
-            <button key ={color.code} className="color-menu_button " onClick={this.props.onSetColorNewNote} style={{"background-color": color.code}} data-color = {color.name} data-toggle="tooltip" data-placement="bottom" title={color.name}>
+            <OverlayTrigger  overlay={ <Tooltip >{color.tooltip}</Tooltip>}><button key ={color.code} className="color-menu_button " onClick={this.props.onSetColorNewNote} style={{"background-color": color.code}}  data-color = {color.name} >
                 {color.name===this.props.color?'✔':''}
-            </button>);
+            </button></OverlayTrigger>);
 
 
 
@@ -39,11 +41,4 @@ class ColorMenu extends Component {
 }
 
 export default ColorMenu
-/*
-<Dropdown.Item eventKey="1">Red</Dropdown.Item>
-<Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-<Dropdown.Item eventKey="3" active>
-Orange
-</Dropdown.Item>
-<Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
-*/
+
