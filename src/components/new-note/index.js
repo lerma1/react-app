@@ -25,9 +25,11 @@ class NewNote extends Component {
     onClickCreateNewNote(){
         console.log("onClickCreateNewNote");
 
-        this.props.notes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color});
-        this.props.createNewNote(this.props.notes);
+        let newNotes = this.props.notes.concat();
+        newNotes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color});
 
+        this.props.addNote(newNotes);
+        this.props.setColorNewNote(this.props.colors[0].name);
         this.props.setTextNewNote("", "");
         this.props.updateTextBuffer({data:[],currentIndex:-1});
         this.props.closeNewNote();

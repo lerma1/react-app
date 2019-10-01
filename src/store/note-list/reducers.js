@@ -16,7 +16,7 @@ export const noteListReducer = (state = defaultState, action) => {
             return {...state, view: action.payload };
         }
         case ADD_NOTE: {
-            return {...state, notes: action.payload };
+            return {...state, notes: action.payload, view: action.payload };
         }
         case DELETE_NOTE: {
             return {...state, notes: action.payload };

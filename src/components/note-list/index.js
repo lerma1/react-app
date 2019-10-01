@@ -6,8 +6,8 @@ import './style.css'
 class NoteList extends Component {
     constructor(props){
         super(props)
-
-
+       // this.state.notes = this.props.notes;
+    //    this.state.length = this.props.notes.length;
     }
 
 
@@ -23,7 +23,7 @@ class NoteList extends Component {
 //
         return (
             <div className="card-body w-75">
-                <NewNoteContainer  />
+                <NewNoteContainer addNote={this.props.addNote} />
                 <ul className="pl-0 mt-5">
                    {noteElements}
                 </ul>
