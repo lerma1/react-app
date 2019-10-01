@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NewNote from "./index";
-import {setTextNewNote, openNewNote, closeNewNote, setColorNewNote, unDoNewNote, reDoNewNote,updateTextBuffer} from '../../store/new-note/actions.js'
+import {setTextNewNote, openNewNote, closeNewNote, setColorNewNote, unDoNewNote, reDoNewNote,updateTextBuffer, createNewNote} from '../../store/new-note/actions.js'
 
  class NewNoteContainer extends React.Component {
      render() {
@@ -19,6 +19,9 @@ import {setTextNewNote, openNewNote, closeNewNote, setColorNewNote, unDoNewNote,
              setColorNewNote={this.props.setColorNewNote}
              unDoNewNote={this.props.unDoNewNote}
              reDoNewNote={this.props.reDoNewNote}
+             createNewNote={this.props.createNewNote}
+
+             notes={this.props.notes}
          />
 
 
@@ -33,6 +36,7 @@ const mapStateToProps = (state) => {
          color:state.newNote.color,
          colors: state.newNote.colors,
          textBuffer: state.newNote.textBuffer,
+         notes:state.noteList.notes,
      };
 }
 //функция, которая будет наши экшн креэйтеры передавать в пропс
@@ -45,6 +49,7 @@ const mapDispatchToProps = {
     unDoNewNote:unDoNewNote,
     reDoNewNote:reDoNewNote,
     updateTextBuffer:updateTextBuffer,
+    createNewNote: createNewNote,
 }
 
 

@@ -1,4 +1,4 @@
-import {ADD_IMAGE_IN_NEW_NOTE, CHANGE_COLOR_NEW_NOTE,CHANGE_TEXT_NEW_NOTE,UN_DO_NEW_NOTE,RE_DO_NEW_NOTE, OPEN_NEW_NOTE,CLOSE_NEW_NOTE,UPDATE_TEXTBUFFER_NEW_NOTE } from './actions'
+import {ADD_IMAGE_IN_NEW_NOTE, CHANGE_COLOR_NEW_NOTE,CHANGE_TEXT_NEW_NOTE,UN_DO_NEW_NOTE,RE_DO_NEW_NOTE, OPEN_NEW_NOTE,CLOSE_NEW_NOTE,UPDATE_TEXTBUFFER_NEW_NOTE,CREATE_NEW_NOTE } from './actions'
 import {colors} from "../../constants/colors";
 
 const defaultState = {
@@ -12,7 +12,6 @@ const defaultState = {
 }
 
 export const newNoteReducer = (state = defaultState, action) => {
-    console.log("ньюнот редьюсер");console.log( state);
 
     switch (action.type) {
         case OPEN_NEW_NOTE: {
@@ -26,6 +25,9 @@ export const newNoteReducer = (state = defaultState, action) => {
         }
         case CHANGE_COLOR_NEW_NOTE: {
             return {...state, color: action.payload };
+        }
+        case CREATE_NEW_NOTE: {
+            return {...state, notes: action.payload };
         }
         case CHANGE_TEXT_NEW_NOTE: {
             return {...state,  title: action.payload.title, text: action.payload.text };

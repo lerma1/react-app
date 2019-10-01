@@ -9,7 +9,7 @@ import rootReducer from "./store/reducers";
 
 
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 var mainElem = document.getElementById('root');
 render(<Provider store={store}> <App/> </Provider>, mainElem);

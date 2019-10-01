@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import notes from "../fixtures";
 import 'bootstrap/dist/css/bootstrap.css'
-import NoteList from "./note-list";
+import NoteListContainer  from "./note-list/note-list-container.js"
 
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     render() {
      return(
         <div className ="container"  >
-           <NoteList notes={notes} />
+           <NoteListContainer notes={notes} />
 
         </div>
     )

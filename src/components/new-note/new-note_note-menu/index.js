@@ -53,7 +53,7 @@ class NewNoteNoteMenu extends Component {
                     {(this.props.enableReDo) ? reDoButtonEnabled : reDoButtonDisabled}
                 </OverlayTrigger>
                 <OverlayTrigger overlay={ <Tooltip >Сохранить заметку</Tooltip>}>
-                    <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1"><h5>Сохранить</h5></button>
+                    <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1" onClick={this.props.onClickCreateNewNote}><h5>Сохранить</h5></button>
                 </OverlayTrigger>
 
             </div>

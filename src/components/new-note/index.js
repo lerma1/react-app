@@ -6,9 +6,6 @@ import NewNoteNoteMenu from './new-note_note-menu/index.js';
 import './style.css'
 
 
-
-
-
 class NewNote extends Component {
     constructor(props){
         super(props)
@@ -20,7 +17,20 @@ class NewNote extends Component {
         this.onClickUnDoNewNote = this.onClickUnDoNewNote.bind(this);
         this.onClickReDoNewNote = this.onClickReDoNewNote.bind(this);
         this.addTextBuffer = this.addTextBuffer.bind(this);
+        this.onClickCreateNewNote = this.onClickCreateNewNote.bind(this);
         this.timer = undefined;
+
+    }
+
+    onClickCreateNewNote(){
+        console.log("onClickCreateNewNote");
+
+        this.props.notes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color});
+        this.props.createNewNote(this.props.notes);
+
+        this.props.setTextNewNote("", "");
+        this.props.updateTextBuffer({data:[],currentIndex:-1});
+        this.props.closeNewNote();
 
     }
 
@@ -112,6 +122,7 @@ class NewNote extends Component {
                             onSetColorNewNote = {this.onSetColorNewNote}
                             onClickUnDoNewNote = {this.onClickUnDoNewNote}
                             onClickReDoNewNote = {this.onClickReDoNewNote}
+                            onClickCreateNewNote = {this.onClickCreateNewNote}
                             enableUnDo = {this.props.textBuffer.currentIndex >= 0}
                             enableReDo = {(this.props.textBuffer.currentIndex + 1) < this.props.textBuffer.data.length}
                          />
@@ -124,7 +135,7 @@ class NewNote extends Component {
     renderNewNoteClose = () =>{
         return (
                 <div className="card-body" >
-                    <h2><input className="new-note__input w-100 text-secondary" type="text"  placeholder="Новая заметка..."></input></h2>
+                    <h2><input className="new-note__input w-100 text-secondary" type="text"  placeholder="Новая заметка..." onClick={this.onClickNewNote} value={this.props.text} ></input></h2>
                 </div>
         );
     }
@@ -133,7 +144,7 @@ class NewNote extends Component {
         var body = this.props.isOpen?this.renderNewNoteOpen():this.renderNewNoteClose();
 
         return (
-            <div className="card shadow " onClick={this.onClickNewNote}>
+            <div className="card shadow " >
                 {body}
             </div>
         )

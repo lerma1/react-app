@@ -1,3 +1,13 @@
+.note-menu__img-button{
+  hight: 50px;
+  width: 30px;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
 .note-menu__img-button:hover {
   cursor: pointer ;
 }

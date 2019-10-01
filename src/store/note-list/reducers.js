@@ -1,9 +1,11 @@
 import {CHANGE_VIEW_NOTE_LIST, ADD_NOTE, DELETE_NOTE } from "./actions";
 import notes from "../../fixtures";
+import {colors} from "../../constants/colors";
 
 const defaultState = {
  view: "list",
  notes: notes,
+ colors: colors,
 
 }
 

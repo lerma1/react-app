@@ -3,7 +3,6 @@ export const CLOSE_NEW_NOTE = "CLOSE_NEW_NOTE";
 export const CREATE_NEW_NOTE = "CREATE_NEW_NOTE";
 export const ADD_IMAGE_IN_NEW_NOTE="ADD_IMAGE_IN_NEW_NOTE";
 export const CHANGE_COLOR_NEW_NOTE="CHANGE_COLOR_NEW_NOTE";
-export const CHANGE_TITLE_NEW_NOTE="CHANGE_TITLE_NEW_NOTE";
 export const CHANGE_TEXT_NEW_NOTE="CHANGE_TEXT_NEW_NOTE";
 export const UN_DO_NEW_NOTE="UN_DO_NEW_NOTE";
 export const RE_DO_NEW_NOTE="RE_DO_NEW_NOTE";
@@ -19,9 +18,9 @@ export const closeNewNote = () => ({
 
 });
 
-export const createNewNote = (title) => ({
+export const createNewNote = (notes) => ({
     type: CREATE_NEW_NOTE,
-    payload:title,
+    payload:notes,
 });
 
 export const addImageNewNote = (img) => ({
