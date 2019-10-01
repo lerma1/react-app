@@ -38,8 +38,7 @@ const mapStateToProps = (state) => {
          color:state.newNote.color,
          colors: state.newNote.colors,
          textBuffer: state.newNote.textBuffer,
-         //notes: this.props.notes,
-        notes:state.noteList.notes,
+         notes:state.noteList.notes,
 
      };
 }
@@ -54,7 +53,7 @@ const mapDispatchToProps = {
     reDoNewNote:reDoNewNote,
     updateTextBuffer:updateTextBuffer,
     createNewNote: createNewNote,
-   // addNote:addNote,
+    addNote:addNote,
 }
 
 

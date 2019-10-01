@@ -38,7 +38,7 @@ class NewNoteNoteMenu extends Component {
 
         return (
 
-            <div className="d-inline-block w-100 dropdown " >
+            <div className="d-flex align-items-center w-100 dropdown " >
                 <OverlayTrigger overlay={ <Tooltip >Выбрать цвет заметки</Tooltip>}>
                 <Dropdown className="d-inline-block">
                     <Dropdown.Toggle as={DropdownButton} id="dropdown-custom-components" url = "url(icon/new-color.png)"/>
@@ -53,7 +53,7 @@ class NewNoteNoteMenu extends Component {
                     {(this.props.enableReDo) ? reDoButtonEnabled : reDoButtonDisabled}
                 </OverlayTrigger>
                 <OverlayTrigger overlay={ <Tooltip >Сохранить заметку</Tooltip>}>
-                    <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1" onClick={this.props.onClickCreateNewNote}><h5>Сохранить</h5></button>
+                    <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1 ml-auto" onClick={this.props.onClickCreateNewNote}><h5>Сохранить</h5></button>
                 </OverlayTrigger>
 
             </div>

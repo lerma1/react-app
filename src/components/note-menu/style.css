@@ -1,6 +1,7 @@
-.note-menu__img-button{
+.note-menu__delete-button{
   hight: 50px;
-  width: 30px;
+  width: 50px;
+display: inline-block;
   background-origin: border-box;
   background-repeat: no-repeat;
 
@@ -8,6 +9,6 @@
   border: none;
   outline: none;
 }
-.note-menu__img-button:hover {
+.note-menu__delete-button:hover {
   cursor: pointer ;
 }

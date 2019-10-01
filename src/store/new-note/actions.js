@@ -21,7 +21,6 @@ export const closeNewNote = () => ({
 export const createNewNote = (notes) => ({
     type: CREATE_NEW_NOTE,
     payload:notes,
-    date: new Date(),
 });
 
 export const addImageNewNote = (img) => ({

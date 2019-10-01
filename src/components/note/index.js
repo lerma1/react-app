@@ -27,7 +27,7 @@ class Note extends Component {
 
 
         return (
-            <div className="card  " onClick={this.handleClick} >
+            <div className="card  "  >
                 {img}
                 <div className="card-body pb-1" style={{"background-color": this.props.color}}>
 

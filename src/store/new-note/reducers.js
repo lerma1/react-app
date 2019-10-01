@@ -28,7 +28,7 @@ export const newNoteReducer = (state = defaultState, action) => {
             return {...state, color: action.payload };
         }
         case CREATE_NEW_NOTE: {
-            return {...state, notes: action.payload, date: action.date };
+            return {...state, notes: action.payload };
         }
         case CHANGE_TEXT_NEW_NOTE: {
             return {...state,  title: action.payload.title, text: action.payload.text };

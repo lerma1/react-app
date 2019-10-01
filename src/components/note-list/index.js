@@ -4,11 +4,7 @@ import Note from "../note";
 import './style.css'
 
 class NoteList extends Component {
-    constructor(props){
-        super(props)
-       // this.state.notes = this.props.notes;
-    //    this.state.length = this.props.notes.length;
-    }
+
 
 
 
@@ -17,13 +13,13 @@ class NoteList extends Component {
 
          const noteElements = this.props.notes.map((note, index) =>
                 <li key = {note.id} className="article-list__li mt-4 ">
-                    <Note note = {note} notes={this.props.notes} color={this.props.colors.find(item => item.name === note.color ).code} deleteNote = {this.props.deleteNote}/>
+                    <Note note = {note} notes={this.props.notes} color={this.props.colors.find(item => item.name === note.color ).code} deleteNote = {this.props.deleteNote} />
                 </li>
           );
 //
         return (
             <div className="card-body w-75">
-                <NewNoteContainer addNote={this.props.addNote} />
+                <NewNoteContainer  />
                 <ul className="pl-0 mt-5">
                    {noteElements}
                 </ul>

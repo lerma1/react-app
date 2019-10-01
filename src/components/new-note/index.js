@@ -29,6 +29,7 @@ class NewNote extends Component {
         newNotes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color});
 
         this.props.addNote(newNotes);
+
         this.props.setColorNewNote(this.props.colors[0].name);
         this.props.setTextNewNote("", "");
         this.props.updateTextBuffer({data:[],currentIndex:-1});
