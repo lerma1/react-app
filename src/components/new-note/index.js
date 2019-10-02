@@ -26,9 +26,9 @@ class NewNote extends Component {
         console.log("onClickCreateNewNote");
 
         let newNotes = this.props.notes.concat();
-        newNotes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color});
+        newNotes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color,isOpen: false});
 
-        this.props.addNote(newNotes);
+        this.props.updateNotes(newNotes);
 
         this.props.setColorNewNote(this.props.colors[0].name);
         this.props.setTextNewNote("", "");
@@ -54,9 +54,14 @@ class NewNote extends Component {
 
 
         this.props.setTextNewNote(title, text);
-        clearTimeout(this.timer);
-        this.timer = setTimeout(()=>{ let buffer = this.addTextBuffer(title,text,this.props.textBuffer);this.props.updateTextBuffer(buffer);}, 200);
-
+        if(this.props.textBuffer.currentIndex===-1){let buffer = this.addTextBuffer(title,text,this.props.textBuffer);this.props.updateTextBuffer(buffer);}
+         else {
+            clearTimeout(this.timer);
+            this.timer = setTimeout(() => {
+                let buffer = this.addTextBuffer(title, text, this.props.textBuffer);
+                this.props.updateTextBuffer(buffer);
+            }, 200);
+        }
         }
 
 
@@ -126,7 +131,7 @@ class NewNote extends Component {
                             onClickUnDoNewNote = {this.onClickUnDoNewNote}
                             onClickReDoNewNote = {this.onClickReDoNewNote}
                             onClickCreateNewNote = {this.onClickCreateNewNote}
-                            enableUnDo = {this.props.textBuffer.currentIndex >= 0}
+                            enableUnDo = {this.props.textBuffer.currentIndex > -1}
                             enableReDo = {(this.props.textBuffer.currentIndex + 1) < this.props.textBuffer.data.length}
                          />
 

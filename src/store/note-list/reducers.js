@@ -1,4 +1,4 @@
-import {CHANGE_VIEW_NOTE_LIST, ADD_NOTE, DELETE_NOTE } from "./actions";
+import {CHANGE_VIEW_NOTE_LIST, UPDATE_NOTES} from "./actions";
 import notes from "../../fixtures";
 import {colors} from "../../constants/colors";
 
@@ -15,12 +15,10 @@ export const noteListReducer = (state = defaultState, action) => {
         case CHANGE_VIEW_NOTE_LIST: {
             return {...state, view: action.payload };
         }
-        case ADD_NOTE: {
+        case UPDATE_NOTES: {
             return {...state, notes: action.payload, view: action.payload };
         }
-        case DELETE_NOTE: {
-            return {...state, notes: action.payload };
-        }
+
         default: return state;
 
     }

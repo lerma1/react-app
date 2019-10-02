@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NoteList from "./index";
-import {setViewNoteList, addNote, deleteNote} from "../../store/note-list/actions";
+import {setViewNoteList, updateNotes} from "../../store/note-list/actions";
+import {updateCurrentNote} from "../../store/note/actions";
 
 
 
@@ -12,8 +13,10 @@ class NoteListContainer extends React.Component {
             notes={this.props.notes}
             colors={this.props.colors}
             setViewNoteList={this.props.setViewNoteList}
-            addNote={this.props.addNote}
-            deleteNote={this.props.deleteNote}
+            updateNotes={this.props.updateNotes}
+
+            updateCurrentNote={this.props.updateCurrentNote}
+
         />
 
 
@@ -31,8 +34,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
 
     setViewNoteList:setViewNoteList,
-    addNote: addNote,
-    deleteNote:deleteNote,
+    updateNotes: updateNotes,
+
+    updateCurrentNote:updateCurrentNote,
+
 }
 
 

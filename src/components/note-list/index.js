@@ -13,7 +13,7 @@ class NoteList extends Component {
 
          const noteElements = this.props.notes.map((note, index) =>
                 <li key = {note.id} className="article-list__li mt-4 ">
-                    <Note note = {note} notes={this.props.notes} color={this.props.colors.find(item => item.name === note.color ).code} deleteNote = {this.props.deleteNote} />
+                    <Note show={note.isEditing} note = {note} notes={this.props.notes} color={this.props.colors.find(item => item.name === note.color ).code} updateCurrentNote = {this.props.updateCurrentNote} updateNotes = {this.props.updateNotes} />
                 </li>
           );
 //
