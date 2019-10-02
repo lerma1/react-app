@@ -4,7 +4,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "../new-note/new-note_note-menu/new-note_dropdown-button";
-import ColorMenu from "../color-menu";
+
 
 class NoteMenu extends Component {
 

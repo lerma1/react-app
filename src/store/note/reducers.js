@@ -44,7 +44,7 @@ export const noteReducer = (state = defaultState, action) => {
             return {...state, title: action.payload.title, text: action.payload.text,  textBuffer: action.payload.textBuffer };
         }
         case UPDATE_CURRENT_NOTE: {
-            return {...state, id:action.payload.title, title: action.payload.title, text: action.payload.text, color: action.payload.color, date: action.payload.date,  textBuffer: action.payload.textBuffer, isEditing: action.payload.isEditing };
+            return {...state, id:action.payload.id, title: action.payload.title, text: action.payload.text, color: action.payload.color, date: action.payload.date,  textBuffer: action.payload.textBuffer, isEditing: action.payload.isEditing };
         }
         default: return state;
 

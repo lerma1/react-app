@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import NewNote from '../new-note/index.js'
+import CurrentNote from '../current-note/index.js'
 import {saveNote, addImage, setColor, setText, updateTextBuffer, unDoReDo,updateCurrentNote} from '../../store/note/actions.js'
 import {updateNotes} from "../../store/note-list/actions";
 
@@ -9,7 +9,8 @@ import {updateNotes} from "../../store/note-list/actions";
 
 class CurrentNoteContainer extends React.Component {
     render() {
-        return       <NewNote
+        return       <CurrentNote
+            id={this.props.id}
             title={this.props.title}
             text={this.props.text}
             isOpen={this.props.isOpen}
@@ -37,6 +38,7 @@ class CurrentNoteContainer extends React.Component {
 //берет из Стейта какие-то значения и передает их в пропсы компонента
 const mapStateToProps = (state) => {
     return{
+        id: state.note.id,
         title: state.note.title,
         text: state.note.text,
         isOpen:state.note.isOpen,

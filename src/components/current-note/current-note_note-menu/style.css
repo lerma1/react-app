@@ -1,0 +1,25 @@
+.note-menu__img-button:hover {
+  cursor: pointer ;
+}
+.note-menu__img-button:hover:disabled {
+  cursor: no-drop ;
+}
+
+.note-menu__img-button{
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.dropdown-toggle::after {
+  content:  none;
+}
+
+.note-menu__img-button:focus {
+  box-shadow: none;
+  border: none;
+}

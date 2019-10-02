@@ -29,16 +29,12 @@ class Note extends Component {
       notes[index].isEditing = true;
 
       this.props.updateNotes(notes);
-      console.log("props",this.props);
+
   };
 
     onClickDeleteNote() {
 
-        let index = this.props.notes.findIndex(item => item.id === this.props.note.id );
-        let notes = this.props.notes.slice();
 
-        notes.splice(index,1);
-        this.props.updateNotes(notes);
     }
 
 
@@ -49,15 +45,15 @@ class Note extends Component {
 
 
         return (
-            <div className="card  " onClick={this.handleShow} >
+            <div className="card  "  >
 
                 {img}
-                <div className="card-body pb-1" style={{"background-color": this.props.color}}>
+                <div onClick={this.handleShow} className="card-body pb-1" style={{"background-color": this.props.color}}>
 
                     <h3 className="new-note__input w-100 text-secondary">{this.props.note.title}</h3>
                     <h5 className="new-note__input w-100 text-secondary">{this.props.note.text}</h5>
                     <div>
-                       <NoteMenu note = {this.props.note} onClickDeleteNote={this.onClickDeleteNote}/>
+                       <NoteMenu note = {this.props.note} />
                     </div>
                 </div>
                 <Modal show={this.props.note.isEditing} onHide={this.handleClose} centered size="lg">
