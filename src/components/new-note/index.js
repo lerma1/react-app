@@ -30,8 +30,8 @@ class NewNote extends Component {
 
         this.props.updateNotes(newNotes);
 
-        this.props.setColorNewNote(this.props.colors[0].name);
-        this.props.setTextNewNote("", "");
+        this.props.setColor(this.props.colors[0].name);
+        this.props.setText("", "");
         this.props.updateTextBuffer({data:[],currentIndex:-1});
         this.props.closeNewNote();
 
@@ -53,7 +53,7 @@ class NewNote extends Component {
         let title = document.getElementById("title-new-note").value;
 
 
-        this.props.setTextNewNote(title, text);
+        this.props.setText(title, text);
         if(this.props.textBuffer.currentIndex===-1){let buffer = this.addTextBuffer(title,text,this.props.textBuffer);this.props.updateTextBuffer(buffer);}
          else {
             clearTimeout(this.timer);
@@ -70,7 +70,7 @@ class NewNote extends Component {
     }
 
     onSetColorNewNote(event) {
-          this.props.setColorNewNote(event.target.getAttribute('data-color'));
+          this.props.setColor(event.target.getAttribute('data-color'));
     }
 
     onClickUnDoNewNote() {
@@ -81,7 +81,7 @@ class NewNote extends Component {
         var title = (this.props.textBuffer.currentIndex >= 0) ? this.props.textBuffer.data[this.props.textBuffer.currentIndex].title : "";
         var text = (this.props.textBuffer.currentIndex >= 0) ? this.props.textBuffer.data[this.props.textBuffer.currentIndex].text : "";
 
-        this.props.unDoNewNote(title, text, this.props.textBuffer  );
+        this.props.unDoReDo(title, text, this.props.textBuffer  );
 
     }
 
@@ -93,7 +93,7 @@ class NewNote extends Component {
             let title = this.props.textBuffer.data[this.props.textBuffer.currentIndex].title;
             let text = this.props.textBuffer.data[this.props.textBuffer.currentIndex].text;
 
-            this.props.unDoNewNote(title, text, this.props.textBuffer);
+            this.props.unDoReDo(title, text, this.props.textBuffer);
         }
 
 

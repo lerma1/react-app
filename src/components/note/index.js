@@ -60,7 +60,7 @@ class Note extends Component {
                        <NoteMenu note = {this.props.note} onClickDeleteNote={this.onClickDeleteNote}/>
                     </div>
                 </div>
-                <Modal show={true} onHide={this.handleClose} centered size="lg">
+                <Modal show={this.props.note.isEditing} onHide={this.handleClose} centered size="lg">
                     <CurrentNoteContainer />
                 </Modal>
 

@@ -25,17 +25,17 @@ export const createNewNote = (notes) => ({
     payload:notes,
 });
 
-export const addImageNewNote = (img) => ({
+export const addImage = (img) => ({
     type: ADD_IMAGE_IN_NEW_NOTE,
     payload:img,
 });
 
-export const setColorNewNote = (color) => ({
+export const setColor = (color) => ({
     type: CHANGE_COLOR_NEW_NOTE,
     payload:color,
 });
 
-export const setTextNewNote = (title, text) => ({
+export const setText = (title, text) => ({
     type: CHANGE_TEXT_NEW_NOTE,
     payload:{text: text, title: title}
 });
@@ -45,15 +45,11 @@ export const updateTextBuffer = (textBuffer) => ({
     payload:{textBuffer: textBuffer}
 });
 
-export const unDoNewNote = ( title, text, textBuffer) => ({
+export const unDoReDo = ( title, text, textBuffer) => ({
     type: UN_DO_NEW_NOTE,
     payload:{text: text, title: title, textBuffer: textBuffer}
 });
 
-export const reDoNewNote = (title, text, textBuffer) => ({
-    type: RE_DO_NEW_NOTE,
-    payload: {text: text, title: title, textBuffer: textBuffer}
-});
 
 
 

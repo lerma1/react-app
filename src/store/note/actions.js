@@ -6,22 +6,22 @@ export const UN_DO_RE_DO_CURRENT_NOTE="UN_DO_RE_DO_CURRENT_NOTE";
 export const UPDATE_TEXTBUFFER_CURRENT_NOTE="UPDATE_TEXTBUFFER_CURRENT_NOTE";
 export const UPDATE_CURRENT_NOTE="UPDATE_CURRENT_NOTE";
 
-export const saveCurrentNote = (notes) => ({
+export const saveNote = (notes) => ({
     type: SAVE_CURRENT_NOTE,
     payload:notes,
 });
 
-export const addImageCurrentNote = (img) => ({
+export const addImage = (img) => ({
     type: ADD_IMAGE_IN_CURRENT_NOTE,
     payload:img,
 });
 
-export const setColorCurrentNote = (color) => ({
+export const setColor = (color) => ({
     type: CHANGE_COLOR_CURRENT_NOTE,
     payload:color,
 });
 
-export const setTextCurrentNote = (title, text) => ({
+export const setText = (title, text) => ({
     type: CHANGE_TEXT_CURRENT_NOTE,
     payload:{text: text, title: title}
 });
@@ -31,7 +31,7 @@ export const updateTextBuffer = (textBuffer) => ({
     payload:{textBuffer: textBuffer}
 });
 
-export const unDoReDoCurrentNote = ( title, text, textBuffer) => ({
+export const unDoReDo = ( title, text, textBuffer) => ({
     type: UN_DO_RE_DO_CURRENT_NOTE,
     payload:{text: text, title: title, textBuffer: textBuffer}
 });

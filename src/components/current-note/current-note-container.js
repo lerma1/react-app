@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import NewNote from '../new-note/index.js'
-import {saveCurrentNote, addImageCurrentNote, setColorCurrentNote, setTextCurrentNote, updateTextBuffer, unDoReDoCurrentNote,updateCurrentNote} from '../../store/note/actions.js'
+import {saveNote, addImage, setColor, setText, updateTextBuffer, unDoReDo,updateCurrentNote} from '../../store/note/actions.js'
 import {updateNotes} from "../../store/note-list/actions";
 
 
@@ -19,13 +19,13 @@ class CurrentNoteContainer extends React.Component {
             textBuffer={this.props.textBuffer}
             notes={this.props.notes}
 
-            saveCurrentNote={this.props.saveCurrentNote}
-            addImageCurrentNote={this.props.addImageCurrentNote}
-            setColorCurrentNote={this.props.setColorCurrentNote}
-            setTextCurrentNote={this.props.setTextCurrentNote}
+            saveNote={this.props.saveNote}
+            addImage={this.props.addImage}
+            setColor={this.props.setColor}
+            setText={this.props.setText}
             updateTextBuffer={this.props.updateTextBuffer}
-            unDoReDoCurrentNote={this.props.unDoReDoCurrentNote}
-            updateCurrentNote={this.props.reDoNewNote}
+            unDoReDo={this.props.unDoReDo}
+            updateCurrentNote={this.props.updateCurrentNote}
 
             updateNotes={this.props.updateNotes}
 
@@ -51,12 +51,12 @@ const mapStateToProps = (state) => {
 //функция, которая будет наши экшн креэйтеры передавать в пропс
 const mapDispatchToProps = {
 
-    saveCurrentNote:saveCurrentNote,
-    addImageCurrentNote: addImageCurrentNote,
-    setColorCurrentNote:setColorCurrentNote,
-    setTextCurrentNote:setTextCurrentNote,
+    saveCurrentNote:saveNote,
+    addImageCurrentNote: addImage,
+    setColor:setColor,
+    setText:setText,
     updateTextBuffer:updateTextBuffer,
-    unDoReDoCurrentNote:unDoReDoCurrentNote,
+    unDoReDo:unDoReDo,
     updateCurrentNote:updateCurrentNote,
     updateNotes:updateNotes,
 }
