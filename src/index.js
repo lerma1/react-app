@@ -8,7 +8,7 @@ import {createStore} from "redux";
 import rootReducer from "./store/reducers";
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import About from "./components/about";
-import StatisticsContainer from "./components/statistic";
+import StatisticsContainer from "./components/statistic/statistics-container.js";
 import NoteListContainer  from "./components/note-list/note-list-container.js"
 
 

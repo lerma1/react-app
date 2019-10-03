@@ -16,23 +16,7 @@ const App = ({children}) => (
     </div>
 );
 
-/*
-class App extends Component {
 
-
-    render() {
-     return(
-        <div>
-
-            <About/>
-            <Statistics/>
-
-            <NoteListContainer/>
-
-        </div>
-    )
-    }
-}*/
 
 
 

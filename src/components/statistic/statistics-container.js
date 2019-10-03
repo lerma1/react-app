@@ -1,17 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Statistics from '/index.js';
+import Statistics from './index.js';
 
 
 
 class StatisticsContainer extends React.Component {
     render() {
-        return       <Statistics
+        return   (  <Statistics
             countCreateNotes={this.props.countCreateNotes}
             countDeleteNotes={this.props.countDeleteNotes}
 
 
-        />
+        />)
 
 
     }

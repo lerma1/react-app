@@ -5,19 +5,29 @@ import React, {Component} from 'react';
 class Statistics extends Component {
     constructor(props){
         super(props);
+        this.handler = this.handler.bind(this);
+    }
+
+    handler(){
+        alert(this.props);
+        console.log(this.props);
     }
 
     render() {
-        console.log(this.props);
+
         return (
+            <div className= "card-body mx-auto" style={{"max-width":"1200px"}} >
 
-            <div className="card-body " style={{"max-width":"1200px"}}>
-                <h3>Статистика</h3>
+                <h3 className="text-center mb-5">Статистика</h3>
 
-                <p>Создано заметок: {this.props.countCreateNotes}</p>
-                <p>Удалено заметок: {this.props.countDeleteNotes}</p>
+
+                <p className="text-center">Создано заметок: {this.props.countCreateNotes}</p>
+                <p className="text-center">Удалено заметок: {this.props.countDeleteNotes}</p>
+
+
 
             </div>
+
         )
     }
 }

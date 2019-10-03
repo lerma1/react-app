@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
+import {Link} from "react-router-dom";
 
 
 
@@ -29,9 +30,9 @@ export default class NoteNavbar extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Заметки</Nav.Link>
-                        <Nav.Link href="/statistics">Статистика</Nav.Link>
-                        <Nav.Link href="/about">О программе</Nav.Link>
+                        <Link to="/" className="text-white m-3">Заметки</Link>
+                        <Link to="/statistics" className="text-white m-3">Статистика</Link>
+                        <Link to="/about" className="text-white m-3">О программе</Link>
                     </Nav>
                     <Nav>
                         <ToggleButtonGroup type="radio" name="options" defaultValue={1}   onChange={this.handleChange} >
