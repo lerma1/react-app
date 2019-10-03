@@ -14,8 +14,7 @@ class Note extends Component {
 
        this.handleClose = this.handleClose.bind(this);
        this.handleShow = this.handleShow.bind(this);
-       //this.show=this.props.show;
-       console.log("props",this.props);
+
     }
 
    handleClose () {

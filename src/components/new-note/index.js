@@ -23,7 +23,7 @@ class NewNote extends Component {
     }
 
     onClickCreateNewNote(){
-        console.log("onClickCreateNewNote");
+
 
         let newNotes = this.props.notes.concat();
         newNotes.unshift({title: this.props.title, text: this.props.text,date: new Date(), id:( "id" + new Date()),color: this.props.color,isOpen: false});
@@ -34,6 +34,7 @@ class NewNote extends Component {
         this.props.setText("", "");
         this.props.updateTextBuffer({data:[],currentIndex:-1});
         this.props.closeNewNote();
+        this.props.setCountNewNotes(this.props.countCreateNotes+1);
 
     }
 
@@ -74,7 +75,7 @@ class NewNote extends Component {
     }
 
     onClickUnDoNewNote() {
-        console.log("onClickUnDoNewNote");   console.log(this.props.textBuffer);
+
         if (this.props.textBuffer.currentIndex === -1) return;
 
         this.props.textBuffer.currentIndex--;

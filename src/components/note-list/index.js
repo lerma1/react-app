@@ -10,8 +10,9 @@ class NoteList extends Component {
 
     render() {
 
-        let noteGirdClass= this.props.isGirdView? "article-list__li mt-4 m-3 note-list_view-gird-elem ": "article-list__li mt-4 flex-fill";
-        let noteListGirdClass = this.props.isGirdView? " card-body mx-auto p-0 note-list_view-gird": "card-body mx-auto p-0 note-list_view-list";
+        let noteGirdClass= this.props.isGirdView? "article-list__li mt-4 m-3 note-list_view-gird-elem ": "article-list__li mt-4 m-0 d-block mw-100 flex-fill ";
+        let noteListGirdClass = this.props.isGirdView? " mt-5 d-flex justify-content-start flex-wrap card-body mx-auto p-0 note-list_view-gird": "mt-5 d-flex justify-content-start flex-wrap card-body mx-auto p-0 note-list_view-list flex-column   ";
+
 
          const noteElements = this.props.notes.map((note, index) =>
                 <li key = {note.id} className= {noteGirdClass}  >
@@ -20,15 +21,15 @@ class NoteList extends Component {
           );
 //
         return (
-            <div className= "card-body "  >
+            <div className= "card-body   "  >
                 <div className="mx-auto note-list_view-list"> <NewNoteContainer  /></div>
-                <div className={noteListGirdClass}  >
-                <ul className="pl-0 mt-5 d-flex justify-content-start flex-wrap  align-content-stretch">
+
+                <ul className={noteListGirdClass}>
 
                    {noteElements}
 
                 </ul>
-                </div></div>
+                </div>
 
         );
     }

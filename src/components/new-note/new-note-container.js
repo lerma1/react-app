@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import NewNote from "./index";
 import {setText, openNewNote, closeNewNote, setColor, unDoReDo, updateTextBuffer, createNewNote} from '../../store/new-note/actions.js'
-import {updateNotes} from "../../store/note-list/actions";
+import {updateNotes,setCountNewNotes} from "../../store/note-list/actions";
 
 class NewNoteContainer extends React.Component {
      render() {
@@ -13,6 +13,8 @@ class NewNoteContainer extends React.Component {
              color={this.props.color}
              colors={this.props.colors}
              textBuffer={this.props.textBuffer}
+             countCreateNotes={this.props.countCreateNotes}
+
              openNewNote={this.props.openNewNote}
              closeNewNote={this.props.closeNewNote}
              updateTextBuffer={this.props.updateTextBuffer}
@@ -22,6 +24,8 @@ class NewNoteContainer extends React.Component {
 
              createNewNote={this.props.createNewNote}
              updateNotes={this.props.updateNotes}
+             setCountNewNotes={this.props.setCountNewNotes}
+
 
              notes={this.props.notes}
          />
@@ -39,6 +43,7 @@ const mapStateToProps = (state) => {
          colors: state.noteList.colors,
          textBuffer: state.newNote.textBuffer,
          notes:state.noteList.notes,
+         countCreateNotes:state.noteList.countCreateNotes,
 
      };
 }
@@ -54,6 +59,9 @@ const mapDispatchToProps = {
     updateTextBuffer:updateTextBuffer,
     createNewNote: createNewNote,
     updateNotes:updateNotes,
+
+    setCountNewNotes:setCountNewNotes,
+
 }
 
 
