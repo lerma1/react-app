@@ -12,11 +12,7 @@ class NoteMenu extends Component {
 
         return (
             <div className="d-flex align-items-center w-100 ">
-                <OverlayTrigger overlay={ <Tooltip >Выбрать цвет заметки</Tooltip>}>
-                    <Dropdown className="d-inline-block">
-                        <Dropdown.Toggle as={DropdownButton} id="dropdown-custom-components" url = "url(icon/new-color.png)"/>
-                    </Dropdown>
-                </OverlayTrigger >
+
 
                 <OverlayTrigger overlay={ <Tooltip >Удалить заметку</Tooltip>}>
                     <button

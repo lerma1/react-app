@@ -18,7 +18,7 @@ class NoteList extends Component {
           );
 //
         return (
-            <div className="card-body w-75">
+            <div className="card-body m-auto" style={{"max-width":"700px"}}>
                 <NewNoteContainer  />
                 <ul className="pl-0 mt-5">
                    {noteElements}

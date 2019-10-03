@@ -133,6 +133,7 @@ class NewNote extends Component {
                             onClickCreateNewNote = {this.onClickCreateNewNote}
                             enableUnDo = {this.props.textBuffer.currentIndex > -1}
                             enableReDo = {(this.props.textBuffer.currentIndex + 1) < this.props.textBuffer.data.length}
+                            enableSave = {this.props.text.length>0||this.props.title.length>0}
                          />
 
                     </div>

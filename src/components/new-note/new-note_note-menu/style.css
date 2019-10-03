@@ -1,7 +1,7 @@
 .note-menu__img-button:hover {
   cursor: pointer ;
 }
-.note-menu__img-button:hover:disabled {
+.btn:hover:disabled {
   cursor: no-drop ;
 }
 

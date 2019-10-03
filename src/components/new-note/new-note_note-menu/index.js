@@ -34,6 +34,18 @@ class NewNoteNoteMenu extends Component {
             style={{"background-image":"url(icon/cancel-d.png)"}}
          /></span>;
 
+        let saveButtonEnabled =
+            <button  className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1 ml-auto btn-w-120" onClick={this.props.onClickCreateNewNote}>
+                <h5>Сохранить</h5>
+            </button>
+       ;
+
+        let saveButtonDisabled =
+            <button  disabled className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1 ml-auto btn-w-120" >
+                <h5>Сохранить</h5>
+            </button>
+        ;
+
 
 
         return (
@@ -53,7 +65,7 @@ class NewNoteNoteMenu extends Component {
                     {(this.props.enableReDo) ? reDoButtonEnabled : reDoButtonDisabled}
                 </OverlayTrigger>
                 <OverlayTrigger overlay={ <Tooltip >Сохранить заметку</Tooltip>}>
-                    <button className="btn w-auto text-secondary  float-right btn-sm note-menu__opticality-1 ml-auto" onClick={this.props.onClickCreateNewNote}><h5>Сохранить</h5></button>
+                    {(this.props.enableSave) ? saveButtonEnabled : saveButtonDisabled}
                 </OverlayTrigger>
 
             </div>

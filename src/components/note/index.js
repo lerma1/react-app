@@ -19,8 +19,14 @@ class Note extends Component {
     }
 
    handleClose () {
-        //this.props.show=false; console.log("handleClose",this.props.show);
-    };
+       this.props.updateCurrentNote(this.props.note.id, this.props.note.title, this.props.note.text, this.props.note.color, this.props.note.date, false);
+       let notes = this.props.notes.slice();
+       let index = this.props.notes.findIndex(item => item.id === this.props.note.id );
+       notes[index].isEditing = false;
+
+       this.props.updateNotes(notes);
+
+   };
 
   handleShow(){
       this.props.updateCurrentNote(this.props.note.id, this.props.note.title, this.props.note.text, this.props.note.color, this.props.note.date, true);
@@ -51,7 +57,7 @@ class Note extends Component {
                 <div onClick={this.handleShow} className="card-body pb-1" style={{"background-color": this.props.color}}>
 
                     <h3 className="new-note__input w-100 text-secondary">{this.props.note.title}</h3>
-                    <h5 className="new-note__input w-100 text-secondary">{this.props.note.text}</h5>
+                    <h5 ><pre className="new-note__input w-100 text-secondary h4">{this.props.note.text}</pre></h5>
                     <div>
                        <NoteMenu note = {this.props.note} />
                     </div>
