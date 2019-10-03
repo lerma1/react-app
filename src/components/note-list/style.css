@@ -2,3 +2,15 @@
     list-style: none;
 
 }
+
+.note-list_view-gird-elem{
+    width: 250px;
+}
+
+.note-list_view-gird{
+    max-width: 1200px;
+}
+
+.note-list_view-list{
+    max-width: 700px;
+}

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 
@@ -10,12 +9,19 @@ import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 export default class NoteNavbar extends Component {
     constructor(props) {
         super(props)
-
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange (val) {
+        (val===1)? this.props.setViewNoteList(false):this.props.setViewNoteList(true);
+
+    };
+
+
 
     render() {
 
-        const handleChange = val => alert(val);
+
         return (
 
             <Navbar collapseOnSelect expand="lg" bg="info" variant="dark" >
@@ -28,7 +34,7 @@ export default class NoteNavbar extends Component {
                         <Nav.Link href="#pricing">О программе</Nav.Link>
                     </Nav>
                     <Nav>
-                        <ToggleButtonGroup type="radio" name="options" defaultValue={1}   onChange={handleChange} >
+                        <ToggleButtonGroup type="radio" name="options" defaultValue={1}   onChange={this.handleChange} >
                             <ToggleButton variant="outline-light" value={1}>Список</ToggleButton>
                             <ToggleButton variant="outline-light" value={2}>Сетка</ToggleButton>
                         </ToggleButtonGroup>

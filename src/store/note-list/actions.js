@@ -3,9 +3,9 @@ export const CHANGE_VIEW_NOTE_LIST = "CHANGE_VIEW_NOTE_LIST";
 export const UPDATE_NOTES = "UPDATE_NOTES";
 
 
-export const setViewNoteList = (view) => ({
+export const setViewNoteList = (isGirdView) => ({
     type: CHANGE_VIEW_NOTE_LIST,
-    payload:view,
+    payload:isGirdView,
 });
 
 export const updateNotes = (notes) => ({

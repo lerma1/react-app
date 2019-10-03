@@ -56,13 +56,13 @@ class Note extends Component {
                 {img}
                 <div onClick={this.handleShow} className="card-body pb-1" style={{"background-color": this.props.color}}>
 
-                    <h3 className="new-note__input w-100 text-secondary">{this.props.note.title}</h3>
-                    <h5 ><pre className="new-note__input w-100 text-secondary h4">{this.props.note.text}</pre></h5>
+                    <h4 className="new-note__input w-100 text-secondary">{this.props.note.title}</h4>
+                    <h6 ><pre className="new-note__input w-100 text-secondary h5">{this.props.note.text}</pre></h6>
                     <div>
                        <NoteMenu note = {this.props.note} />
                     </div>
                 </div>
-                <Modal show={this.props.note.isEditing} onHide={this.handleClose} centered size="lg">
+                <Modal show={this.props.note.isEditing} onHide={this.handleClose} centered size="lg" >
                     <CurrentNoteContainer />
                 </Modal>
 

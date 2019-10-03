@@ -9,7 +9,7 @@ import {updateCurrentNote} from "../../store/note/actions";
 class NoteListContainer extends React.Component {
     render() {
         return       <NoteList
-            view={this.props.view}
+            isGirdView={this.props.isGirdView}
             notes={this.props.notes}
             colors={this.props.colors}
             setViewNoteList={this.props.setViewNoteList}
@@ -25,7 +25,7 @@ class NoteListContainer extends React.Component {
 //берет из Стейта какие-то значения и передает их в пропсы компонента
 const mapStateToProps = (state) => {
     return{
-        view: state.noteList.view,
+        isGirdView: state.noteList.isGirdView,
         notes: state.noteList.notes,
         colors:state.noteList.colors,
     };

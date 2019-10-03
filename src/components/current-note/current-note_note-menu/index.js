@@ -35,7 +35,7 @@ class CurrentNoteMenu extends Component {
          /></span>;
 
         let saveButtonEnabled =
-            <button  className="btn  text-secondary  float-right btn-sm note-menu__opticality-1 btn-w-120" onClick={this.props.onClickCreateNewNote}>
+            <button  className="btn  text-secondary  float-right btn-sm note-menu__opticality-1 btn-w-120" onClick= {this.props.onClickSave}>
                 <h5>Сохранить</h5>
             </button>
         ;
@@ -76,4 +76,3 @@ class CurrentNoteMenu extends Component {
 
 export default CurrentNoteMenu
 
-/*<input type="file" className="btn note-menu__img-button m-1" style={{"background-image":"url(icon/new-image.png)"}} data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Добавить картинку" />*/
