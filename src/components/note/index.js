@@ -55,8 +55,8 @@ class Note extends Component {
                 {img}
                 <div onClick={this.handleShow} className="card-body pb-1" style={{"background-color": this.props.color}}>
 
-                    <h4 className="new-note__input w-100 text-secondary display-5">{this.props.note.title}</h4>
-                    <pre className="new-note__input w-100 text-secondary h5 display-5">{this.props.note.text}</pre>
+                    <h4 className="new-note__input w-100  display-5">{this.props.note.title}</h4>
+                    <pre className="new-note__input w-100  h5 display-5">{this.props.note.text}</pre>
                     <div>
                        <NoteMenu note = {this.props.note} />
                     </div>
